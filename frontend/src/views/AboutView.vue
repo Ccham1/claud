@@ -1,0 +1,8 @@
+<template>
+  <div>
+    <h1 class="text-3xl font-bold text-gray-900 mb-4">About Amigos 30+</h1>
+    <p class="text-gray-600 leading-relaxed">
+      Amigos 30+ is Barcelona's community for adults aged 30 and above looking to make real friendships.
+    </p>
+  </div>
+</template>

@@ -1,18 +1,10 @@
 <template>
-  <div>
-    <TheHeader />
-    <main class="pt-36">
-      <HeroSlider :slides="heroSlides" />
-      <SeoContent />
-      <TestimonialsSection />
-    </main>
-    <TheFooter />
-  </div>
+  <HeroSlider :slides="heroSlides" />
+  <SeoContent />
+  <TestimonialsSection />
 </template>
 
 <script setup>
-import TheHeader from '@/components/TheHeader.vue'
-import TheFooter from '@/components/TheFooter.vue'
 import HeroSlider from '@/components/HeroSlider.vue'
 import TestimonialsSection from '@/components/TestimonialsSection.vue'
 import SeoContent from '@/components/SeoContent.vue'
