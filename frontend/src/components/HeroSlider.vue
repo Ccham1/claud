@@ -17,16 +17,18 @@
 
       <!-- Content -->
       <div class="relative z-10 h-full flex items-center">
-        <div class="max-w-6xl mx-auto px-6 sm:px-10 py-20">
+        <div class="w-full max-w-6xl mx-auto px-6 sm:px-10 py-20 flex justify-center sm:justify-end">
+          <div class="text-center sm:text-right max-w-xl">
           <p class="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-3">
             {{ slide.eyebrow }}
           </p>
-          <p class="text-white text-4xl sm:text-5xl font-extrabold leading-tight mb-4 max-w-xl">
+          <p class="text-white text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
             {{ slide.title }}
           </p>
-          <p class="text-white/80 text-lg mb-8 max-w-md">
+          <p class="text-white/80 text-lg mb-8">
             {{ slide.subtitle }}
           </p>
+          <div class="flex justify-center sm:justify-end">
           <a
             :href="slide.ctaLink"
             class="inline-flex items-center px-6 py-3 rounded-full bg-orange-600 text-white font-semibold hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
@@ -34,6 +36,8 @@
           >
             {{ slide.ctaLabel }}
           </a>
+          </div>
+          </div>
         </div>
       </div>
     </div>
