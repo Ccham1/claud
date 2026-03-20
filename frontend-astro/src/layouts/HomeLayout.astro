@@ -1,0 +1,22 @@
+---
+import TheHeader from '../components/TheHeader.vue'
+import TheFooter from '../components/TheFooter.vue'
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amigos 30+ · Barcelona's Community for Adults 30+</title>
+    <meta name="description" content="Barcelona's friendliest community for adults aged 30 and above. Join events, make friends, and connect with real people." />
+  </head>
+  <body>
+    <TheHeader client:load />
+    <main class="pt-36">
+      <slot />
+    </main>
+    <TheFooter client:load />
+  </body>
+</html>

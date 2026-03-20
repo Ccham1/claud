@@ -1,0 +1,33 @@
+---
+import TheHeader from '../components/TheHeader.vue'
+import TheFooter from '../components/TheFooter.vue'
+import '../styles/global.css'
+
+const { title = 'Amigos 30+' } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} · Amigos 30+</title>
+    <meta name="description" content="Barcelona's friendliest community for adults aged 30 and above." />
+  </head>
+  <body>
+    <TheHeader client:load />
+    <main class="pt-36">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 lg:col-span-10">
+            <slot />
+          </div>
+          <aside class="col-span-12 lg:col-span-2">
+            <slot name="sidebar" />
+          </aside>
+        </div>
+      </div>
+    </main>
+    <TheFooter client:load />
+  </body>
+</html>
