@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #e85d2f;
+  --brand-dark: #c44a1e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
