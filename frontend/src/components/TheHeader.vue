@@ -83,24 +83,21 @@
     <!-- Bottom nav bar (desktop) -->
     <div class="hidden md:block border-b border-gray-100">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-1 h-11">
-        <a
+        <RouterLink
           v-for="link in links"
           :key="link.label"
-          :href="link.href"
+          :to="link.href"
           class="px-3 py-1.5 text-sm text-gray-600 hover:text-orange-600 transition-colors rounded-md hover:bg-orange-50 whitespace-nowrap"
-          @click.prevent="scrollTo(link.id)"
-        >
-          {{ link.label }}
-        </a>
+          active-class="text-orange-600 bg-orange-50"
+        >{{ link.label }}</RouterLink>
 
         <!-- Prominent CTA -->
-        <a
-          href="#contact"
+        <RouterLink
+          to="/contact"
           class="ml-2 flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-700 transition-colors whitespace-nowrap"
-          @click.prevent="scrollTo('contact')"
         >
           <span>🤝</span> Join the community
-        </a>
+        </RouterLink>
       </div>
     </div>
 
@@ -108,22 +105,21 @@
     <div v-if="menuOpen" id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
       <ul class="flex flex-col gap-1 mt-2 list-none p-0 m-0">
         <li v-for="link in links" :key="link.label">
-          <a
-            :href="link.href"
+          <RouterLink
+            :to="link.href"
             class="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-orange-600 hover:bg-orange-50 transition-colors"
-            @click="menuOpen = false; scrollTo(link.id)"
-          >
-            {{ link.label }}
-          </a>
+            active-class="text-orange-600 bg-orange-50"
+            @click="menuOpen = false"
+          >{{ link.label }}</RouterLink>
         </li>
         <li>
-          <a
-            href="#contact"
+          <RouterLink
+            to="/contact"
             class="block mt-2 px-4 py-2 rounded-full bg-gray-900 text-white text-sm font-semibold text-center hover:bg-gray-700 transition-colors"
-            @click="menuOpen = false; scrollTo('contact')"
+            @click="menuOpen = false"
           >
             🤝 Join the community
-          </a>
+          </RouterLink>
         </li>
       </ul>
     </div>
@@ -138,13 +134,13 @@ const menuOpen = ref(false)
 const bannerVisible = ref(true)
 
 const links = [
-  { label: 'Home',         id: 'home',         href: '#home' },
-  { label: 'About',        id: 'about',        href: '#about' },
-  { label: 'How It Works', id: 'how-it-works', href: '#how-it-works' },
-  { label: 'Chat',         id: 'chat',         href: '#chat' },
-  { label: 'Events',       id: 'events',       href: '#events' },
-  { label: 'FAQ',          id: 'faq',          href: '#faq' },
-  { label: 'Contact',      id: 'contact',      href: '#contact' },
+  { label: 'Home',         href: '/' },
+  { label: 'About',        href: '/about' },
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Chat',         href: '/chat' },
+  { label: 'Events',       href: '/events' },
+  { label: 'FAQ',          href: '/faq' },
+  { label: 'Contact',      href: '/contact' },
 ]
 
 function scrollTo(id) {

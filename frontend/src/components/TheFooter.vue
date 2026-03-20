@@ -60,13 +60,10 @@
           <!-- Child col 1: Nav links -->
           <ul class="space-y-2.5 list-none p-0 m-0 flex-1">
             <li v-for="link in siteLinks" :key="link.label">
-              <a
-                :href="link.href"
+              <RouterLink
+                :to="link.href"
                 class="text-sm text-gray-400 hover:text-orange-400 transition-colors"
-                @click.prevent="scrollTo(link.id)"
-              >
-                {{ link.label }}
-              </a>
+              >{{ link.label }}</RouterLink>
             </li>
           </ul>
           <!-- Child col 2: Legal links -->
@@ -145,13 +142,13 @@ function subscribeNewsletter() {
 }
 
 const siteLinks = [
-  { label: 'Home',         id: 'home',         href: '#home' },
-  { label: 'About',        id: 'about',        href: '#about' },
-  { label: 'How It Works', id: 'how-it-works', href: '#how-it-works' },
-  { label: 'Chat',         id: 'chat',         href: '#chat' },
-  { label: 'Events',       id: 'events',       href: '#events' },
-  { label: 'FAQ',          id: 'faq',          href: '#faq' },
-  { label: 'Contact',      id: 'contact',      href: '#contact' },
+  { label: 'Home',         href: '/' },
+  { label: 'About',        href: '/about' },
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Chat',         href: '/chat' },
+  { label: 'Events',       href: '/events' },
+  { label: 'FAQ',          href: '/faq' },
+  { label: 'Contact',      href: '/contact' },
 ]
 
 const legalLinks = [
@@ -183,8 +180,4 @@ const socials = [
     icon: '<path d="M19.24 10.371c-.208-.756-1.178-1.048-1.929-.628a2.774 2.774 0 00-.087.051c-.301-1.93-1.979-3.404-4.006-3.404-1.17 0-2.23.477-2.993 1.246a3.94 3.94 0 00-.469-.189c-.951-.308-1.975.168-2.283 1.068-.295.873.148 1.809.974 2.153a2.79 2.79 0 00-.128.849c0 1.68 1.435 3.042 3.206 3.042.471 0 .916-.103 1.315-.284.146.42.496.726.918.726h.02c.561-.003 1.014-.455 1.014-1.016V13.9c.27.089.562.138.866.138 1.603 0 2.903-1.249 2.903-2.791 0-.303-.052-.592-.149-.864l.023-.012c.72-.374.986-1.257.805-2zm-7.063 4.505a2.396 2.396 0 01-1.455.491c-1.327 0-2.404-1.036-2.404-2.314 0-.213.031-.419.086-.616l-.012-.005c-.692-.283-1.052-.997-.817-1.679.218-.646.921-.99 1.58-.833l.019.006a3.18 3.18 0 012.336-1.02c1.755 0 3.178 1.37 3.178 3.061 0 .15-.012.298-.034.443l.011.006c.532.282.772.876.577 1.435a1.116 1.116 0 01-1.116.779h-.012a1.115 1.115 0 01-.933-.754z"/>',
   },
 ]
-
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
 </script>
